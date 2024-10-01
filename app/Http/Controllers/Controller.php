@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
 
 class Controller
@@ -10,7 +11,8 @@ class Controller
     function home()
     {
         $posts = Post::all();
-        return view("index", compact('posts'));
+        $categories = Category::all();
+        return view("index", compact('posts', 'categories'));
     }
     public function post($slug)
     { {

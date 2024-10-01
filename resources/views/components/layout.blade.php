@@ -18,11 +18,11 @@
         <div class="container px-6 py-8 mx-auto">
             <div class="flex flex-col items-center text-center">
                 <div id="scroll"
-                    class="border border-transparent cursor-pointer font-medium rounded-md  hover:text-amber-500">Dukha
+                    class="border border-transparent cursor-pointer font-semibold text-xl rounded-md text-amber-500  hover:text-amber-500">Dukha
                     Sukha</div>
 
 
-                <p class="max-w-md mx-auto mt-4 text-gray-500 ">Dukha-Sukha is a blogging platform
+                <p class="max-w-md mx-auto mt-2 text-gray-500 ">Dukha-Sukha is a blogging platform
                     built with Laravel and Tailwind CSS. It is designed to be a simple and easy-to-use platform for
                     bloggers to create and publish their content.</p>
 

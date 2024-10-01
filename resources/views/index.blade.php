@@ -2,10 +2,9 @@
     <!-- component -->
     <section>
         <div class="py-16 min-h-screen">
-            <div class="container mx-auto px-6 text-gray-500 flex flex-col justify-center items-center">
-                <div class="relative max-w-7xl ">
-                    <h1 class="font-semibold text-2xl mb-4">Featured Blogs</h1>
-                    <div class="relative w-[900px] z-10 flex flex-col gap-3">
+            <div class="container mx-auto  px-6 text-gray-500 flex gap-x-6 ">
+                <div >
+                    <div class="relative w-[750px] z-10 flex flex-col gap-3">
                         @foreach ($posts as $post)
                             <div class=" bg-white  border rounded-md px-4 py-4">
                                 <div class="flex justify-between">
@@ -16,10 +15,13 @@
                                                     class="w-10 h-10 rounded-full">
                                                 <div>
                                                     <h2 class="text-sm font-semibold">Mr.X</h2>
-                                                    <p class="text-xs text-gray-500">{{ $post->category->name }}</p>
+                                                    <p class="text-xs text-gray-500">Admin and Author</p>
                                                 </div>
                                             </div>
-                                            <div class="mt-4">
+                                            <div><button
+                                                    class="border text-xs rounded border border-gray-500 px-1 py-1 mt-2">{{ $post->category->name }}</button>
+                                            </div>
+                                            <div class="mt-2">
                                                 <a href="{{ route('post', $post->slug) }}"
                                                     class="text-xl font-bold leading-tight cursor-pointer">
                                                     {{ $post->title }}</a>
@@ -38,14 +40,22 @@
                                         </div>
 
                                     </div>
-                                    <div class="w-[200px] h-[150px]">
+                                    <div class="w-[200px] h-[150px] overflow-hidden rounded-md">
                                         <img src='{{ Storage::url($post->image) }}' alt="post"
-                                            class="h-full w-full rounded-md">
+                                            class="h-full w-full hover:scale-110 transition-transform duration-300">
                                     </div>
                                 </div>
                             </div>
                         @endforeach
 
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <h1 class="font-semibold text-2xl mb-4">Featured Blogs</h1>
+                    <div class="flex flex-wrap gap-2">
+                        @foreach ($categories as $category)
+                        <button class="border px-4 py-2 text-sm  cursor-pointer rounded bg-gray-200 hover:bg-gray-300 active:bg-gray-200 ">{{$category->name}}</button>
+                        @endforeach
                     </div>
                 </div>
             </div>
